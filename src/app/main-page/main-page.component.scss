@@ -1,0 +1,17 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(6, auto);
+	grid-gap: 1rem;
+
+	.empty-item {
+		grid-column: 6 span;
+		text-align: center;
+	}
+}

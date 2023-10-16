@@ -1,0 +1,8 @@
+<div><input type="checkbox" [formControl]="checkbox" /></div>
+<div><img [src]="item.foto" /></div>
+<div>{{ item.label }}</div>
+<div>{{ item.status }}</div>
+<div>{{ item.description }}</div>
+<div>
+	<app-icon (click)="killMe.emit()" [icon]="Icons.trash"></app-icon>
+</div>

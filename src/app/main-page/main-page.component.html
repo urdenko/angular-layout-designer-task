@@ -1,0 +1,32 @@
+<section class="header">
+	<h1>Items store</h1>
+	<button (click)="addItem()">Add item</button>
+	<button (click)="print()">Print</button>
+	<div>
+		Selected: {{ selected.size }}
+
+		<button (click)="deleteSelected()">
+			<app-icon [icon]="Icons.trash"></app-icon>
+			Delete
+		</button>
+	</div>
+</section>
+
+<section class="grid">
+	<div></div>
+	<div>Foto</div>
+	<div>Label</div>
+	<div>Status</div>
+	<div>Description</div>
+	<div>Actions</div>
+	<app-item
+		*ngFor="let item of items"
+		[item]="item"
+		(isChecked)="checkItem($event, item.id)"
+		(killMe)="deleteById(item.id)"
+	></app-item>
+	<div class="empty-item">
+		<!-- при появлении элементов app-item уберите эту заглушку с помощью чистого css -->
+		Empty list
+	</div>
+</section>
